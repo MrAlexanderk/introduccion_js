@@ -15,15 +15,15 @@ const formatMXN = new Intl.NumberFormat("en-US", {
   currency: "USD",
 });
 
-botonIncrementar.onclick = function () {
+botonIncrementar.addEventListener("click", function () {
   cantidad++;
   spanCantidad.innerHTML = cantidad;
   let total = cantidad * precio;
   let formatTotal = formatMXN.format(total);
   spanValorTotal.innerHTML = formatTotal;
-};
+});
 
-botonDecrementar.onclick = function () {
+botonDecrementar.addEventListener("click", function () {
   if (cantidad > 0) {
     cantidad--;
     spanCantidad.innerHTML = cantidad;
@@ -31,4 +31,4 @@ botonDecrementar.onclick = function () {
     let formatTotal = formatMXN.format(total);
     spanValorTotal.innerHTML = formatTotal;
   }
-};
+});
